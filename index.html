@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>title</title>
+    <link rel="stylesheet" href="style.css">
+  <style type="text/css">
+<!--
+.EstimateInputOk { 	border:			solid 1px #CCCCCC;
+}
+.EstimateNumber { 	text-align:center;
+}
+.style2 {color: #0082C6}
+.style2 {	text-align: left;
+}
+.style3 {	margin-left: 40px;
+}
+.style4 {
+	text-align: left;
+	background-color: #0082C6;
+color: white;
+}
+.style5 {
+	background-color: #0082C6;
+}
+-->
+</style><script type="text/javascript">
+	
+	function UpdateEstimate (frmEstimate)
+	{
+		var fltTotal = 0;
+		
+		for (i=0; i < frmEstimate.length; ++i)
+		{
+			if (frmEstimate [i].getAttribute ("value").replace(/^\s+|\s+$/g, '') == "")
+			{
+				frmEstimate [i].value = "0";
+			}
+			
+			if (parseInt (frmEstimate [i].value) == frmEstimate [i].value)
+			{
+				var fltValue = Math.round (frmEstimate [i].getAttribute ("estamount") * frmEstimate [i].value * 10) / 10;
+				document.getElementById (frmEstimate [i].getAttribute ("rel")).innerHTML = fltValue;
+				frmEstimate [i].className = "EstimateInputOk EstimateNumber";
+				
+				fltTotal += Math.round(fltValue * 100) / 100;
+			}
+			else
+			{
+				frmEstimate [i].className = "EstimateInputWarning EstimateNumber";
+			}
+		}
+		
+		document.getElementById ("EstimateTotalValue").innerHTML = Math.round(fltTotal * 100) / 100;
+	}
+	
+</script>
+
+    </head>
+  
+  <body>
+ <form id="Estimate" onsubmit="return false">
+            <table border="0" cellpadding="5" cellspacing="0" width="50%" class="style3">
+              <tbody><tr>
+                <th class="style4" colspan="4">FAMILY ROOM</th>
+              </tr>
+              <tr>
+                <th class="style2">Package Type</th>
+                <th class="style2">Size</th>
+                <th class="style2">Number</th>
+                <th class="style2">Total</th>
+              </tr>
+              <tr>
+                <td class="text_primary">Billiard table</td>
+                <td class="text_primary">2.4m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="family1" onblur="UpdateEstimate(this.form)" estamount="2.4">
+                </div></td>
+                <td class="text_primary"><span id="family1">2.4</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Bookcase</td>
+                <td class="text_primary">0.6<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="family2" onblur="UpdateEstimate(this.form)" estamount="0.6">
+                </div></td>
+                <td class="text_primary"><span id="family2">66.6</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Chair</td>
+                <td class="text_primary">0.2m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="family3" onblur="UpdateEstimate(this.form)" estamount="0.2">
+                </div></td>
+                <td class="text_primary"><span id="family3">222.2</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Divan</td>
+                <td class="text_primary">1.2m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="family4" onblur="UpdateEstimate(this.form)" estamount="1.2">
+                </div></td>
+                <td class="text_primary"><span id="family4">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Table</td>
+                <td class="text_primary">1.2m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="family5" onblur="UpdateEstimate(this.form)" estamount="1.2">
+                </div></td>
+                <td class="text_primary"><span id="family5">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Stereo</td>
+                <td class="text_primary">0.1m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="family6" onblur="UpdateEstimate(this.form)" estamount="0.1">
+                </div></td>
+                <td class="text_primary"><span id="family6">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">VCR / DVD / Xbox / PS3 / Wii / HDTV</td>
+                <td class="text_primary">0.1m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="family7" onblur="UpdateEstimate(this.form)" estamount="0.1">
+                </div></td>
+                <td class="text_primary"><span id="family7">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Television</td>
+                <td class="text_primary">0.4m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="family8" onblur="UpdateEstimate(this.form)" estamount="0.4">
+                </div></td>
+                <td class="text_primary"><span id="family8">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Computer</td>
+                <td class="text_primary">0.5m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="family9" onblur="UpdateEstimate(this.form)" estamount="0.5">
+                </div></td>
+                <td class="text_primary"><span id="family9">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">3-seater couch</td>
+                <td class="text_primary">1.3m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="family10" onblur="UpdateEstimate(this.form)" estamount="1.3">
+                </div></td>
+                <td class="text_primary"><span id="family10">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">2-seater couch</td>
+                <td class="text_primary">1.0m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="family11" onblur="UpdateEstimate(this.form)" estamount="1.0">
+                </div></td>
+                <td class="text_primary"><span id="family11">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Armchair</td>
+                <td class="text_primary">0.5m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="family12" onblur="UpdateEstimate(this.form)" estamount="0.5">
+                </div></td>
+                <td class="text_primary"><span id="family12">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Standard carton</td>
+                <td class="text_primary">0.1m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="family13" onblur="UpdateEstimate(this.form)" estamount="0.1">
+                </div></td>
+                <td class="text_primary"><span id="family13">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Book &amp; wine carton</td>
+                <td class="text_primary">0.1m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="family14" onblur="UpdateEstimate(this.form)" estamount="0.1">
+                </div></td>
+                <td class="text_primary"><span id="family14">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">&nbsp;</td>
+                <td class="text_primary">&nbsp;</td>
+                <td class="text_primary">&nbsp;</td>
+                <td class="text_primary">&nbsp;</td>
+              </tr>
+              <tr>
+                <th class="style4" colspan="4">DINING ROOM</th>
+              </tr>
+              <tr>
+                <th class="style2">Package Type</th>
+                <th class="style2">Size</th>
+                <th class="style2">Number</th>
+                <th class="style2">Total</th>
+              </tr>
+              <tr>
+                <td class="text_primary">Bookshelf</td>
+                <td class="text_primary">0.5m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="dining1" onblur="UpdateEstimate(this.form)" estamount="0.5">
+                </div></td>
+                <td class="text_primary"><span id="dining1">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Buffet / sideboard</td>
+                <td class="text_primary">1.0m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="dining2" onblur="UpdateEstimate(this.form)" estamount="1.0">
+                </div></td>
+                <td class="text_primary"><span id="dining2">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Crystal cabinet</td>
+                <td class="text_primary">0.9m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="dining3" onblur="UpdateEstimate(this.form)" estamount="0.9">
+                </div></td>
+                <td class="text_primary"><span id="dining3">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Dining chair</td>
+                <td class="text_primary">0.2m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="dining4" onblur="UpdateEstimate(this.form)" estamount="0.2">
+                </div></td>
+                <td class="text_primary"><span id="dining4">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Dining table</td>
+                <td class="text_primary">1.0m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="dining5" onblur="UpdateEstimate(this.form)" estamount="1.0">
+                </div></td>
+                <td class="text_primary"><span id="dining5">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Other chair</td>
+                <td class="text_primary">0.3m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="dining6" onblur="UpdateEstimate(this.form)" estamount="0.3">
+                </div></td>
+                <td class="text_primary"><span id="dining6">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Auto Trolley</td>
+                <td class="text_primary">0.3m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="dining7" onblur="UpdateEstimate(this.form)" estamount="0.3">
+                </div></td>
+                <td class="text_primary"><span id="dining7">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Whatnot</td>
+                <td class="text_primary">0.3m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="dining8" onblur="UpdateEstimate(this.form)" estamount="0.3">
+                </div></td>
+                <td class="text_primary"><span id="dining8">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Standard carton</td>
+                <td class="text_primary">0.1m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="dining9" onblur="UpdateEstimate(this.form)" estamount="0.1">
+                </div></td>
+                <td class="text_primary"><span id="dining9">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Book &amp; wine carton</td>
+                <td class="text_primary">0.1m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="dining10" onblur="UpdateEstimate(this.form)" estamount="0.1">
+                </div></td>
+                <td class="text_primary"><span id="dining10">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">&nbsp;</td>
+                <td class="text_primary">&nbsp;</td>
+                <td class="text_primary">&nbsp;</td>
+                <td class="text_primary">&nbsp;</td>
+              </tr>
+              <tr>
+                <th class="style4" colspan="4">LOUNGE ROOM</th>
+              </tr>
+              <tr>
+                <th class="style2">Package Type</th>
+                <th class="style2">Size</th>
+                <th class="style2">Number</th>
+                <th class="style2">Total</th>
+              </tr>
+              <tr>
+                <td class="text_primary">Bar</td>
+                <td class="text_primary">1.0m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="lounge1" onblur="UpdateEstimate(this.form)" estamount="1.0">
+                </div></td>
+                <td class="text_primary"><span id="lounge1">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Bookcase</td>
+                <td class="text_primary">0.6m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="lounge2" onblur="UpdateEstimate(this.form)" estamount="0.6">
+                </div></td>
+                <td class="text_primary"><span id="lounge2">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Bookshelf</td>
+                <td class="text_primary">0.5m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="lounge3" onblur="UpdateEstimate(this.form)" estamount="0.5">
+                </div></td>
+                <td class="text_primary"><span id="lounge3">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Bureau</td>
+                <td class="text_primary">0.6m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="lounge4" onblur="UpdateEstimate(this.form)" estamount="0.6">
+                </div></td>
+                <td class="text_primary"><span id="lounge4">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Arm chair </td>
+                <td class="text_primary">0.5m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="lounge5" onblur="UpdateEstimate(this.form)" estamount="0.5">
+                </div></td>
+                <td class="text_primary"><span id="lounge5">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Other chair</td>
+                <td class="text_primary">0.3m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="lounge6" onblur="UpdateEstimate(this.form)" estamount="1.0">
+                </div></td>
+                <td class="text_primary"><span id="lounge6">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">China cabinet</td>
+                <td class="text_primary">0.7m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="lounge7" onblur="UpdateEstimate(this.form)" estamount="0.7">
+                </div></td>
+                <td class="text_primary"><span id="lounge7">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Coffee table</td>
+                <td class="text_primary">0.2m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="lounge8" onblur="UpdateEstimate(this.form)" estamount="0.2">
+                </div></td>
+                <td class="text_primary"><span id="lounge8">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Desk</td>
+                <td class="text_primary">0.9m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="lounge9" onblur="UpdateEstimate(this.form)" estamount="0.9">
+                </div></td>
+                <td class="text_primary"><span id="lounge9">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Divan</td>
+                <td class="text_primary">1.2m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="lounge10" onblur="UpdateEstimate(this.form)" estamount="1.2">
+                </div></td>
+                <td class="text_primary"><span id="lounge10">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Heater</td>
+                <td class="text_primary">0.1m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="lounge11" onblur="UpdateEstimate(this.form)" estamount="0.1">
+                </div></td>
+                <td class="text_primary"><span id="lounge11">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Lampshade</td>
+                <td class="text_primary">0.2m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="lounge12" onblur="UpdateEstimate(this.form)" estamount="0.2">
+                </div></td>
+                <td class="text_primary"><span id="lounge12">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Organ</td>
+                <td class="text_primary">2.0m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="lounge13" onblur="UpdateEstimate(this.form)" estamount="2.0">
+                </div></td>
+                <td class="text_primary"><span id="lounge13">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Piano</td>
+                <td class="text_primary">2.0m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="lounge14" onblur="UpdateEstimate(this.form)" estamount="2.0">
+                </div></td>
+                <td class="text_primary"><span id="lounge14">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Stereo</td>
+                <td class="text_primary">0.4m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="lounge15" onblur="UpdateEstimate(this.form)" estamount="0.4">
+                </div></td>
+                <td class="text_primary"><span id="lounge15">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">TV</td>
+                <td class="text_primary">0.4m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="lounge16" onblur="UpdateEstimate(this.form)" estamount="0.4">
+                </div></td>
+                <td class="text_primary"><span id="lounge16">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">VCR / DVD / Xbox / PS3 / Wii / HDTV</td>
+                <td class="text_primary">0.1m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="lounge17" onblur="UpdateEstimate(this.form)" estamount="0.1">
+                </div></td>
+                <td class="text_primary"><span id="lounge17">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Computer</td>
+                <td class="text_primary">0.5m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="lounge18" onblur="UpdateEstimate(this.form)" estamount="0.5">
+                </div></td>
+                <td class="text_primary"><span id="lounge18">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Wall unit</td>
+                <td class="text_primary">1.0m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="lounge19" onblur="UpdateEstimate(this.form)" estamount="1.0">
+                </div></td>
+                <td class="text_primary"><span id="lounge19">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Standard carton</td>
+                <td class="text_primary">0.1m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="lounge20" onblur="UpdateEstimate(this.form)" estamount="0.1">
+                </div></td>
+                <td class="text_primary"><span id="lounge20">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Book &amp; wine carton</td>
+                <td class="text_primary">0.1m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="lounge21" onblur="UpdateEstimate(this.form)" estamount="0.1">
+                </div></td>
+                <td class="text_primary"><span id="lounge21">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">&nbsp;</td>
+                <td class="text_primary">&nbsp;</td>
+                <td class="text_primary">&nbsp;</td>
+                <td class="text_primary">&nbsp;</td>
+              </tr>
+              <tr>
+                <th class="style4" colspan="4">LAUNDRY</th>
+              </tr>
+              <tr>
+                <th class="style2">Package Type</th>
+                <th class="style2">Size</th>
+                <th class="style2">Number</th>
+                <th class="style2">Total</th>
+              </tr>
+              <tr>
+                <td class="text_primary">Clothes airer</td>
+                <td class="text_primary">0.5m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="laundry1" onblur="UpdateEstimate(this.form)" estamount="0.5">
+                </div></td>
+                <td class="text_primary"><span id="laundry1">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Clothes dryer</td>
+                <td class="text_primary">0.5m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="laundry2" onblur="UpdateEstimate(this.form)" estamount="0.5">
+                </div></td>
+                <td class="text_primary"><span id="laundry2">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Small laundry cupboard</td>
+                <td class="text_primary">0.8m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="laundry3" onblur="UpdateEstimate(this.form)" estamount="0.8">
+                </div></td>
+                <td class="text_primary"><span id="laundry3">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Ironing board</td>
+                <td class="text_primary">0.1m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="laundry4" onblur="UpdateEstimate(this.form)" estamount="0.1">
+                </div></td>
+                <td class="text_primary"><span id="laundry4">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Laundry basket</td>
+                <td class="text_primary">0.1m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="laundry5" onblur="UpdateEstimate(this.form)" estamount="0.1">
+                </div></td>
+                <td class="text_primary"><span id="laundry5">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Laundry trolley</td>
+                <td class="text_primary">0.1m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="laundry6" onblur="UpdateEstimate(this.form)" estamount="0.1">
+                </div></td>
+                <td class="text_primary"><span id="laundry6">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Washing machine</td>
+                <td class="text_primary">0.6m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="laundry7" onblur="UpdateEstimate(this.form)" estamount="0.6">
+                </div></td>
+                <td class="text_primary"><span id="laundry7">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Vacuum cleaner</td>
+                <td class="text_primary">0.2m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="laundry8" onblur="UpdateEstimate(this.form)" estamount="0.2">
+                </div></td>
+                <td class="text_primary"><span id="laundry8">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Standard carton</td>
+                <td class="text_primary">0.1m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="laundry9" onblur="UpdateEstimate(this.form)" estamount="0.1">
+                </div></td>
+                <td class="text_primary"><span id="laundry9">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Book &amp; wine carton</td>
+                <td class="text_primary">0.1m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="laundry10" onblur="UpdateEstimate(this.form)" estamount="0.1">
+                </div></td>
+                <td class="text_primary"><span id="laundry10">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">&nbsp;</td>
+                <td class="text_primary">&nbsp;</td>
+                <td class="text_primary">&nbsp;</td>
+                <td class="text_primary">&nbsp;</td>
+              </tr>
+              <tr>
+                <th class="style4" colspan="4">SUNDRIES</th>
+              </tr>
+              <tr>
+                <th class="style2">Package Type</th>
+                <th class="style2">Size</th>
+                <th class="style2">Number</th>
+                <th class="style2">Total</th>
+              </tr>
+              <tr>
+                <td class="text_primary">Cupboard</td>
+                <td class="text_primary">0.9m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="sundry1" onblur="UpdateEstimate(this.form)" estamount="0.9">
+                </div></td>
+                <td class="text_primary"><span id="sundry1">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Filing cabinet</td>
+                <td class="text_primary">0.6m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="sundry2" onblur="UpdateEstimate(this.form)" estamount="0.6">
+                </div></td>
+                <td class="text_primary"><span id="sundry2">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Golf bag</td>
+                <td class="text_primary">0.2m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="sundry3" onblur="UpdateEstimate(this.form)" estamount="0.2">
+                </div></td>
+                <td class="text_primary"><span id="sundry3">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Sewing machine</td>
+                <td class="text_primary">0.2m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="sundry4" onblur="UpdateEstimate(this.form)" estamount="0.2">
+                </div></td>
+                <td class="text_primary"><span id="sundry4">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Sewing cabinet</td>
+                <td class="text_primary">0.6m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="sundry5" onblur="UpdateEstimate(this.form)" estamount="0.6">
+                </div></td>
+                <td class="text_primary"><span id="sundry5">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Trestle table</td>
+                <td class="text_primary">1.0m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="sundry6" onblur="UpdateEstimate(this.form)" estamount="1.0">
+                </div></td>
+                <td class="text_primary"><span id="sundry6">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Swing (dismantled)</td>
+                <td class="text_primary">1.0m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="sundry7" onblur="UpdateEstimate(this.form)" estamount="1.0">
+                </div></td>
+                <td class="text_primary"><span id="sundry7">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Bench</td>
+                <td class="text_primary">0.8m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="sundry8" onblur="UpdateEstimate(this.form)" estamount="0.8">
+                </div></td>
+                <td class="text_primary"><span id="sundry8">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Exercise bike</td>
+                <td class="text_primary">0.4m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="sundry9" onblur="UpdateEstimate(this.form)" estamount="0.4">
+                </div></td>
+                <td class="text_primary"><span id="sundry9">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Mats &amp; rugs</td>
+                <td class="text_primary">0.2m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="sundry10" onblur="UpdateEstimate(this.form)" estamount="0.2">
+                </div></td>
+                <td class="text_primary"><span id="sundry10">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Pram</td>
+                <td class="text_primary">0.3m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="sundry11" onblur="UpdateEstimate(this.form)" estamount="0.3">
+                </div></td>
+                <td class="text_primary"><span id="sundry11">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Suitcase</td>
+                <td class="text_primary">0.2m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="sundry12" onblur="UpdateEstimate(this.form)" estamount="0.2">
+                </div></td>
+                <td class="text_primary"><span id="sundry12">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Folding chairs</td>
+                <td class="text_primary">0.1m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="sundry13" onblur="UpdateEstimate(this.form)" estamount="0.1">
+                </div></td>
+                <td class="text_primary"><span id="sundry13">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Occasional table</td>
+                <td class="text_primary">0.3m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="sundry14" onblur="UpdateEstimate(this.form)" estamount="0.3">
+                </div></td>
+                <td class="text_primary"><span id="sundry14">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Standard carton</td>
+                <td class="text_primary">0.1m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="sundry15" onblur="UpdateEstimate(this.form)" estamount="0.1">
+                </div></td>
+                <td class="text_primary"><span id="sundry15">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Book &amp; wine carton</td>
+                <td class="text_primary">0.1m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="sundry16" onblur="UpdateEstimate(this.form)" estamount="0.1">
+                </div></td>
+                <td class="text_primary"><span id="sundry16">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Computer</td>
+                <td class="text_primary">0.5m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="sundry18" onblur="UpdateEstimate(this.form)" estamount="0.5">
+                </div></td>
+                <td class="text_primary"><span id="sundry18">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">&nbsp;&nbsp;</td>
+                <td class="text_primary">&nbsp;</td>
+                <td class="text_primary">&nbsp;</td>
+                <td class="text_primary">&nbsp;</td>
+              </tr>
+              <tr>
+                <th class="style4" colspan="4">OUTDOOR</th>
+              </tr>
+              <tr>
+                <th class="style2">Package Type</th>
+                <th class="style2">Size</th>
+                <th class="style2">Number</th>
+                <th class="style2">Total</th>
+              </tr>
+              <tr>
+                <td class="text_primary">BBQ</td>
+                <td class="text_primary">0.8m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="outdoor1" onblur="UpdateEstimate(this.form)" estamount="0.8">
+                </div></td>
+                <td class="text_primary"><span id="outdoor1">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Bicycle</td>
+                <td class="text_primary">0.4m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="outdoor2" onblur="UpdateEstimate(this.form)" estamount="0.4">
+                </div></td>
+                <td class="text_primary"><span id="outdoor2">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Chair</td>
+                <td class="text_primary">0.1m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="outdoor3" onblur="UpdateEstimate(this.form)" estamount="0.1">
+                </div></td>
+                <td class="text_primary"><span id="outdoor3">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Esky</td>
+                <td class="text_primary">0.1m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="outdoor4" onblur="UpdateEstimate(this.form)" estamount="0.1">
+                </div></td>
+                <td class="text_primary"><span id="outdoor4">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Folding chair</td>
+                <td class="text_primary">0.1m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="outdoor5" onblur="UpdateEstimate(this.form)" estamount="0.1">
+                </div></td>
+                <td class="text_primary"><span id="outdoor5">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Fold lounge / banana lounge</td>
+                <td class="text_primary">0.2m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="outdoor6" onblur="UpdateEstimate(this.form)" estamount="0.2">
+                </div></td>
+                <td class="text_primary"><span id="outdoor6">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Garden setting</td>
+                <td class="text_primary">2.5m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="outdoor7" onblur="UpdateEstimate(this.form)" estamount="2.5">
+                </div></td>
+                <td class="text_primary"><span id="outdoor7">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Ladder</td>
+                <td class="text_primary">0.4m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="outdoor8" onblur="UpdateEstimate(this.form)" estamount="0.4">
+                </div></td>
+                <td class="text_primary"><span id="outdoor8">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Mower</td>
+                <td class="text_primary">0.3m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="outdoor9" onblur="UpdateEstimate(this.form)" estamount="0.3">
+                </div></td>
+                <td class="text_primary"><span id="outdoor9">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Child's ride-on toy</td>
+                <td class="text_primary">0.2m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="outdoor10" onblur="UpdateEstimate(this.form)" estamount="0.2">
+                </div></td>
+                <td class="text_primary"><span id="outdoor10">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Pot plants</td>
+                <td class="text_primary">0.1m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="outdoor11" onblur="UpdateEstimate(this.form)" estamount="0.1">
+                </div></td>
+                <td class="text_primary"><span id="outdoor11">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Wheel barrow</td>
+                <td class="text_primary">0.5m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="outdoor12" onblur="UpdateEstimate(this.form)" estamount="0.5">
+                </div></td>
+                <td class="text_primary"><span id="outdoor12">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Whipper snipper</td>
+                <td class="text_primary">0.1m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="outdoor13" onblur="UpdateEstimate(this.form)" estamount="0.1">
+                </div></td>
+                <td class="text_primary"><span id="outdoor13">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Large bin</td>
+                <td class="text_primary">0.6m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="outdoor14" onblur="UpdateEstimate(this.form)" estamount="0.6">
+                </div></td>
+                <td class="text_primary"><span id="outdoor14">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Table tennis table</td>
+                <td class="text_primary">1.0m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="outdoor15" onblur="UpdateEstimate(this.form)" estamount="1.0">
+                </div></td>
+                <td class="text_primary"><span id="outdoor15">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Trampoline (dismantled)</td>
+                <td class="text_primary">1.0m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="outdoor16" onblur="UpdateEstimate(this.form)" estamount="1.0">
+                </div></td>
+                <td class="text_primary"><span id="outdoor16">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Large umbrella</td>
+                <td class="text_primary">0.6m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="outdoor17" onblur="UpdateEstimate(this.form)" estamount="0.6">
+                </div></td>
+                <td class="text_primary"><span id="outdoor17">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Standard carton</td>
+                <td class="text_primary">0.1m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="outdoor18" onblur="UpdateEstimate(this.form)" estamount="0.1">
+                </div></td>
+                <td class="text_primary"><span id="outdoor18">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">&nbsp;</td>
+                <td class="text_primary">&nbsp;</td>
+                <td class="text_primary">&nbsp;</td>
+                <td class="text_primary">&nbsp;</td>
+              </tr>
+              <tr>
+                <th class="style4" colspan="4">BEDROOM</th>
+              </tr>
+              <tr>
+                <th class="style2">Package Type</th>
+                <th class="style2">Size</th>
+                <th class="style2">Number</th>
+                <th class="style2">Total</th>
+              </tr>
+              <tr>
+                <td class="text_primary">Single bed and mattress</td>
+                <td class="text_primary">1.2m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="bedroom1" onblur="UpdateEstimate(this.form)" estamount="1.2">
+                </div></td>
+                <td class="text_primary"><span id="bedroom1">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Double bed and mattress</td>
+                <td class="text_primary">0.6m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="bedroom2" onblur="UpdateEstimate(this.form)" estamount="0.6">
+                </div></td>
+                <td class="text_primary"><span id="bedroom2">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Queen bed and mattress</td>
+                <td class="text_primary">1.8m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="bedroom3" onblur="UpdateEstimate(this.form)" estamount="1.8">
+                </div></td>
+                <td class="text_primary"><span id="bedroom3">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Folding bed</td>
+                <td class="text_primary">0.3m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="bedroom4" onblur="UpdateEstimate(this.form)" estamount="0.3">
+                </div></td>
+                <td class="text_primary"><span id="bedroom4">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Bedside table / drawers</td>
+                <td class="text_primary">0.2m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="bedroom5" onblur="UpdateEstimate(this.form)" estamount="0.2">
+                </div></td>
+                <td class="text_primary"><span id="bedroom5">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Bookcase</td>
+                <td class="text_primary">0.6m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="bedroom6" onblur="UpdateEstimate(this.form)" estamount="0.6">
+                </div></td>
+                <td class="text_primary"><span id="bedroom6">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Chest</td>
+                <td class="text_primary">0.4m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="bedroom7" onblur="UpdateEstimate(this.form)" estamount="0.4">
+                </div></td>
+                <td class="text_primary"><span id="bedroom7">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Chair</td>
+                <td class="text_primary">0.2m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="bedroom8" onblur="UpdateEstimate(this.form)" estamount="0.2">
+                </div></td>
+                <td class="text_primary"><span id="bedroom8">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Chest drawers (large)</td>
+                <td class="text_primary">0.9m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="bedroom9" onblur="UpdateEstimate(this.form)" estamount="0.9">
+                </div></td>
+                <td class="text_primary"><span id="bedroom9">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Cot</td>
+                <td class="text_primary">0.7m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="bedroom10" onblur="UpdateEstimate(this.form)" estamount="0.7">
+                </div></td>
+                <td class="text_primary"><span id="bedroom10">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Dressing table</td>
+                <td class="text_primary">0.8m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="bedroom11" onblur="UpdateEstimate(this.form)" estamount="0.8">
+                </div></td>
+                <td class="text_primary"><span id="bedroom11">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Bed head</td>
+                <td class="text_primary">0.3m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="bedroom12" onblur="UpdateEstimate(this.form)" estamount="0.3">
+                </div></td>
+                <td class="text_primary"><span id="bedroom12">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Double mattress</td>
+                <td class="text_primary">0.5m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="bedroom13" onblur="UpdateEstimate(this.form)" estamount="0.5">
+                </div></td>
+                <td class="text_primary"><span id="bedroom13">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Single mattress</td>
+                <td class="text_primary">0.3m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="bedroom14" onblur="UpdateEstimate(this.form)" estamount="0.3">
+                </div></td>
+                <td class="text_primary"><span id="bedroom14">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Wardrobe</td>
+                <td class="text_primary">1.2m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="bedroom15" onblur="UpdateEstimate(this.form)" estamount="1.2">
+                </div></td>
+                <td class="text_primary"><span id="bedroom15">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Portable robe</td>
+                <td class="text_primary">0.6m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="bedroom16" onblur="UpdateEstimate(this.form)" estamount="0.6">
+                </div></td>
+                <td class="text_primary"><span id="bedroom16">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Desk</td>
+                <td class="text_primary">0.8m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="bedroom17" onblur="UpdateEstimate(this.form)" estamount="0.8">
+                </div></td>
+                <td class="text_primary"><span id="bedroom17">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Dressing table &amp; mirror</td>
+                <td class="text_primary">0.8m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="bedroom18" onblur="UpdateEstimate(this.form)" estamount="0.8">
+                </div></td>
+                <td class="text_primary"><span id="bedroom18">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Cheval mirror</td>
+                <td class="text_primary">0.3m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="bedroom19" onblur="UpdateEstimate(this.form)" estamount="0.3">
+                </div></td>
+                <td class="text_primary"><span id="bedroom19">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Standard carton</td>
+                <td class="text_primary">0.1m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="bedroom20" onblur="UpdateEstimate(this.form)" estamount="0.1">
+                </div></td>
+                <td class="text_primary"><span id="bedroom20">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Book &amp; wine carton</td>
+                <td class="text_primary">0.1m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="bedroom21" onblur="UpdateEstimate(this.form)" estamount="0.1">
+                </div></td>
+                <td class="text_primary"><span id="bedroom21">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">&nbsp;</td>
+                <td class="text_primary">&nbsp;</td>
+                <td class="text_primary">&nbsp;</td>
+                <td class="text_primary">&nbsp;</td>
+              </tr>
+              <tr>
+                <th class="style4" colspan="4">HALL</th>
+              </tr>
+              <tr>
+                <th class="style2">Package Type</th>
+                <th class="style2">Size</th>
+                <th class="style2">Number</th>
+                <th class="style2">Total</th>
+              </tr>
+              <tr>
+                <td class="text_primary">Dropside table</td>
+                <td class="text_primary">0.4m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="hall1" onblur="UpdateEstimate(this.form)" estamount="0.4">
+                </div></td>
+                <td class="text_primary"><span id="hall1">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Coat stand</td>
+                <td class="text_primary">0.6m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="hall2" onblur="UpdateEstimate(this.form)" estamount="0.6">
+                </div></td>
+                <td class="text_primary"><span id="hall2">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Hall table</td>
+                <td class="text_primary">0.3m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="hall3" onblur="UpdateEstimate(this.form)" estamount="0.3">
+                </div></td>
+                <td class="text_primary"><span id="hall3">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Hat stand</td>
+                <td class="text_primary">0.3m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="hall4" onblur="UpdateEstimate(this.form)" estamount="0.3">
+                </div></td>
+                <td class="text_primary"><span id="hall4">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Standard carton</td>
+                <td class="text_primary">0.1m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="hall5" onblur="UpdateEstimate(this.form)" estamount="0.1">
+                </div></td>
+                <td class="text_primary"><span id="hall5">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Book &amp; wine carton</td>
+                <td class="text_primary">0.1m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="hall6" onblur="UpdateEstimate(this.form)" estamount="0.1">
+                </div></td>
+                <td class="text_primary"><span id="hall6">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">&nbsp;</td>
+                <td class="text_primary">&nbsp;</td>
+                <td class="text_primary">&nbsp;</td>
+                <td class="text_primary">&nbsp;</td>
+              </tr>
+              <tr>
+                <th class="style4" colspan="4">KITCHEN</th>
+              </tr>
+              <tr>
+                <th class="style2">Package Type</th>
+                <th class="style2">Size</th>
+                <th class="style2">Number</th>
+                <th class="style2">Total</th>
+              </tr>
+              <tr>
+                <td class="text_primary">Cabinet dresser</td>
+                <td class="text_primary">1.0m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="kitchen1" onblur="UpdateEstimate(this.form)" estamount="1.0">
+                </div></td>
+                <td class="text_primary"><span id="kitchen1">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Freezer</td>
+                <td class="text_primary">1.0m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="kitchen2" onblur="UpdateEstimate(this.form)" estamount="1.0">
+                </div></td>
+                <td class="text_primary"><span id="kitchen2">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Fridge</td>
+                <td class="text_primary">1.0m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="kitchen3" onblur="UpdateEstimate(this.form)" estamount="1.0">
+                </div></td>
+                <td class="text_primary"><span id="kitchen3">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Table</td>
+                <td class="text_primary">1.0m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="kitchen4" onblur="UpdateEstimate(this.form)" estamount="1.0">
+                </div></td>
+                <td class="text_primary"><span id="kitchen4">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Kitchen chair</td>
+                <td class="text_primary">0.2m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="kitchen5" onblur="UpdateEstimate(this.form)" estamount="0.2">
+                </div></td>
+                <td class="text_primary"><span id="kitchen5">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Microwave</td>
+                <td class="text_primary">0.2m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="kitchen6" onblur="UpdateEstimate(this.form)" estamount="0.2">
+                </div></td>
+                <td class="text_primary"><span id="kitchen6">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Chopping block</td>
+                <td class="text_primary">0.1m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="kitchen7" onblur="UpdateEstimate(this.form)" estamount="0.1">
+                </div></td>
+                <td class="text_primary"><span id="kitchen7">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">High chair</td>
+                <td class="text_primary">0.2m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="kitchen8" onblur="UpdateEstimate(this.form)" estamount="0.2">
+                </div></td>
+                <td class="text_primary"><span id="kitchen8">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Stool</td>
+                <td class="text_primary">0.2m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="kitchen9" onblur="UpdateEstimate(this.form)" estamount="0.2">
+                </div></td>
+                <td class="text_primary"><span id="kitchen9">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Cupboard</td>
+                <td class="text_primary">0.9m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="kitchen10" onblur="UpdateEstimate(this.form)" estamount="0.9">
+                </div></td>
+                <td class="text_primary"><span id="kitchen10">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Standard carton</td>
+                <td class="text_primary">0.1m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="kitchen12" onblur="UpdateEstimate(this.form)" estamount="0.1">
+                </div></td>
+                <td class="text_primary"><span id="kitchen12">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td class="text_primary">Book &amp; wine carton</td>
+                <td class="text_primary">0.1m<sup>3</sup></td>
+                <td class="text_primary"><div align="center">
+                    <input type="text" size="3" value="0" class="EstimateInputOk EstimateNumber" rel="kitchen13" onblur="UpdateEstimate(this.form)" estamount="0.1">
+                </div></td>
+                <td class="text_primary"><span id="kitchen13">0</span>m<sup>3</sup></td>
+              </tr>
+              <tr>
+                <td colspan="4" style="height: 5px" class="style5">&nbsp;</td>
+              </tr>
+              <tr>
+                <td colspan="3" class="text_heading"></td>
+                <td class="text_heading" height="40"><span id="EstimateTotalValue">291.2</span>m<sup>3</sup> </td>
+              </tr>
+            </tbody></table>
+        </form>
+  </body>
+</html>
